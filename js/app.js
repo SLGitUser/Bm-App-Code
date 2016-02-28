@@ -8,7 +8,11 @@ function setAuth(no){
 }
 
 function removeAuth(){
-	removelocal("accountNo");
+	try{
+	removelocal("accountNo");		
+	}catch(e){
+		//TODO handle the exception
+	}
 }
 
 function getlocal(key){
