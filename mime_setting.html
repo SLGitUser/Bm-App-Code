@@ -55,7 +55,7 @@
 						</ul>
 					</div>
 					<div class="content-block">
-						<a href="#" id="logout-btn" class="button button-big button-fill button-danger">注销</a>
+						<a href="base_login.html" id="logout-btn" class="button button-big button-fill button-danger">注销</a>
 					</div>
 
 				</div>
@@ -71,10 +71,10 @@
 		<!-- 默认必须要执行$.init(),实际业务里一般不会在HTML文档里执行，通常是在业务页面代码的最后执行 -->
 		<script>
 			$.init();
-			$("#logout-btn").click(function() {
-				removeAuth();
-				$.router.load("base_login.html");
-			})
+//			$("#logout-btn").click(function() {
+//				removeAuth();
+//				//$.router.load("base_login.html");
+//			})
 		</script>
 
 	</body>
