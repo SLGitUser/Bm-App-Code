@@ -19,21 +19,22 @@ function login() {
 		return false;
 	}
 
+	var data = getSignData();
+	data.m = m;
+	data.p = p;
+	
 	$.ajax({
 		type: 'GET',
-		url: 'http://192.168.0.150:62338/api/account',
+		url: 'http://192.168.1.10:62338/api/account',
 		// data to be added to query string:
-		data: {
-			'm': m,
-			'p': p
-		},
+		data: data,
 		contentType: "application/json",
 		// type of data we are expecting in return:
 		dataType: 'jsonp',
 		//18600961576async: false,
 		//jsonpCallback: 'jsonpCallback',
 		//data: JSON.stringify(postData),
-		timeout: 300,
+		timeout: 3000,
 		//context: $('body'),
 		success: function(data, status, xhr) {
 			// Supposing this JSON payload was received:

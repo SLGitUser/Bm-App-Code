@@ -21,3 +21,11 @@ function setlocal(key, value){
 function removelocal(key){
 	localStorage.removeItem(key);
 }
+
+function getSignData(){
+	var data = {};
+	data.app = "BEA";
+	data.time = new Date().getTime().toString();
+	data.sign = md5("f6201b5ee70cf748a339cc5f11b5c4c4" + "-" + data.time);
+	return data;
+}

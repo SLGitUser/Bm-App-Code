@@ -69,16 +69,18 @@
 		<script type='text/javascript' src='js/sm.min.js' charset='utf-8'></script>
 		<script type='text/javascript' src='js/sm-extend.min.js' charset='utf-8'></script>
 
+		<script type="text/javascript"  src="lib/md5.min.js" charset="utf-8"></script>
 		<script type='text/javascript' src='js/app.js' charset='utf-8'></script>
 		<script type="text/javascript" src="js/base_login.js"></script>
 		<!-- 默认必须要执行$.init(),实际业务里一般不会在HTML文档里执行，通常是在业务页面代码的最后执行 -->
 		<script>
 			$.init();
+			
 			$("#login-btn").click(function() {
 				login();
 			})
 		</script>
-		
+
 	</body>
 
 </html>
