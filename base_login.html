@@ -23,7 +23,8 @@
 					<h1 class="title">登录</h1>
 				</header>
 				<div class="content">
-					<div class="list-block">
+					<div class="list-block" style="margin-top: 0rem;">
+					<div class="text-center" style="background-color: #fff;"><img src="img/logo.jpg" width="40%" /></div>
 						<ul>
 							<!-- Text inputs -->
 							<li>
@@ -75,6 +76,8 @@
 		<!-- 默认必须要执行$.init(),实际业务里一般不会在HTML文档里执行，通常是在业务页面代码的最后执行 -->
 		<script>
 			$.init();
+			
+			removeAuth();
 			
 			$("#login-btn").click(function() {
 				login();

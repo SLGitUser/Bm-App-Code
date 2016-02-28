@@ -22,6 +22,10 @@ function removelocal(key){
 	localStorage.removeItem(key);
 }
 
+function getRemoteSite() {
+	return "http://123.56.185.114:8002";
+}
+
 function getSignData(){
 	var data = {};
 	data.app = "BEA";

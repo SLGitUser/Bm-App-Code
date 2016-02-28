@@ -22,10 +22,11 @@ function login() {
 	var data = getSignData();
 	data.m = m;
 	data.p = p;
-	
+		
 	$.ajax({
 		type: 'GET',
-		url: 'http://192.168.1.10:62338/api/account',
+		// http://123.56.185.114:8002/api/account?app=BEA&time=1456669504149&sign=c16f3826ee62405e4d24f19b8fa07911&m=18600000000&p=123456&_=1456669504153&callback=jsonp1
+		url: getRemoteSite() + '/api/account',
 		// data to be added to query string:
 		data: data,
 		contentType: "application/json",
