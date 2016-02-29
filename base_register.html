@@ -13,6 +13,14 @@
 		<link rel="stylesheet" href="css/sm.min.css">
 		<link rel="stylesheet" href="css/sm-extend.min.css">
 
+		<style type="text/css">
+			#get-code-btn {
+				float: right; position: absolute; top: 0.3rem; right: 0rem; z-index: 2; border: none; background-color: #fff; color: #666;
+			}
+			#get-code-btn:hover {
+				color: #000;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -20,7 +28,7 @@
 			<!-- 单个page ,第一个.page默认被展示-->
 			<div class="page">
 				<header class="bar bar-nav">
-					<h1 class="title">登录</h1>
+					<h1 class="title">注册账户</h1>
 				</header>
 				<div class="content">
 					<div class="list-block" style="margin-top: 0rem;">
@@ -41,8 +49,30 @@
 								<div class="item-content">
 									<div class="item-media"><i class="icon icon-card"></i></div>
 									<div class="item-inner">
+										<div class="item-input" style="position: relative;">
+											<input type="text" name="code" id="code" placeholder="注册验证码" class="" maxlength="5">
+											<button class="pull-right" class="code" id="get-code-btn" onclick="getCode()">单击获取验证码</button>
+
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									<div class="item-media"><i class="icon icon-card"></i></div>
+									<div class="item-inner">
 										<div class="item-input">
 											<input type="password" name="password" id="password" placeholder="密码" class="">
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									<div class="item-media"><i class="icon icon-card"></i></div>
+									<div class="item-inner">
+										<div class="item-input">
+											<input type="password" name="password_confirm" id="password_confirm" placeholder="重复输入密码" class="">
 										</div>
 									</div>
 								</div>
@@ -51,12 +81,13 @@
 					</div>
 					<div class="content-block">
 						<div class="row">
-							<button class="col-100 button button-big button-fill button-success" onclick="login()">登录</button>
+							<button href="#" id="login-btn" class="col-100 button button-big button-fill button-primary" onclick="register()">确认注册</button>
 						</div>
 					</div>
+					<input type="hidden" id="verify-uuid" value="" />
 					<div class="content-block">
 						<div class="row">
-							<div class="col-50"><a href="base_register.html" class="button col-30 external">注册</a></div>
+							<div class="col-50"><a href="base_login.html" class="button col-30 external">登录</a></div>
 							<div class="col-50"><a href="forgot_pass.html" class="button col-30 external">忘记密码</a></div>
 						</div>
 					</div>
@@ -70,7 +101,7 @@
 
 		<script type="text/javascript" src="lib/md5.min.js" charset="utf-8"></script>
 		<script type='text/javascript' src='js/app.js' charset='utf-8'></script>
-		<script type="text/javascript" src="js/base_login.js"></script>
+		<script type="text/javascript" src="js/base_register.js"></script>
 		<!-- 默认必须要执行$.init(),实际业务里一般不会在HTML文档里执行，通常是在业务页面代码的最后执行 -->
 		<script>
 		</script>

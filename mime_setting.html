@@ -55,7 +55,7 @@
 						</ul>
 					</div>
 					<div class="content-block">
-						<a href="#" id="logout-btn" class="button button-big button-fill button-danger">注销</a>
+						<a href="base_login.html" id="logout-btn" class="button button-big button-fill button-danger external">注销</a>
 					</div>
 
 				</div>
@@ -67,15 +67,11 @@
 		<script type='text/javascript' src='js/sm.min.js' charset='utf-8'></script>
 		<script type='text/javascript' src='js/sm-extend.min.js' charset='utf-8'></script>
 
+		<script src="lib/md5.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type='text/javascript' src='js/app.js' charset='utf-8'></script>
+		<script type='text/javascript' src='js/base_login.js' charset='utf-8'></script>
 		<!-- 默认必须要执行$.init(),实际业务里一般不会在HTML文档里执行，通常是在业务页面代码的最后执行 -->
-		<script>
-			$.init();
-			$("#logout-btn").click(function() {
-				removeAuth();
-				$.router.load("base_login.html");
-			})
-		</script>
+		 
 
 	</body>
 
