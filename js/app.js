@@ -3,13 +3,21 @@ function isLogin() {
   return accountNo;
 }
 
+function setMoblieNo(no){
+	setlocal("mobileNo", no);
+}
+
+function getMoblieNo(no){
+	return getlocal("mobileNo");
+}
+
 function setAuth(no){
 	setlocal("accountNo", no);
 }
 
 function removeAuth(){
 	try{
-	removelocal("accountNo");		
+		removelocal("accountNo");		
 	}catch(e){
 		//TODO handle the exception
 	}
@@ -28,6 +36,7 @@ function removelocal(key){
 
 function getRemoteSite() {
 	return "http://123.56.185.114:8002";
+	//return "http://192.168.1.10:62338"
 }
 
 function getSignData(){

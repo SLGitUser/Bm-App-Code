@@ -1,5 +1,7 @@
 $.init();
 
+document.getElementById("mobileno").value = getMoblieNo();
+
 var t = 0;
 var h;
 $("#get-code-btn").click(function() {
@@ -33,7 +35,7 @@ function getCode() {
 
 	var data = getSignData();
 	data.m = m;
-	data.t = "register";
+	data.t = "reset_password";
 
 	$.ajax({
 		type: 'GET',
@@ -132,7 +134,7 @@ function register() {
 	$.ajax({
 		type: 'GET',
 		// http://123.56.185.114:8002/api/account?app=BEA&time=1456669504149&sign=c16f3826ee62405e4d24f19b8fa07911&m=18600000000&p=123456&_=1456669504153&callback=jsonp1
-		url: getRemoteSite() + '/api/base_account_create',
+		url: getRemoteSite() + '/api/base_account_reset_password',
 		// data to be added to query string:
 		data: data,
 		contentType: "application/json",
@@ -150,8 +152,8 @@ function register() {
 			if (data.HasError) {
 				$.alert(data.Errors.join(","));
 			} else {
-				setAuth(data.Model.No);				
-				$.router.load("base_main.html");
+				$.alert('重新设置密码成功');	
+				$.router.load("base_mine.html");
 			}
 		},
 		error: function(xhr, type, error) {

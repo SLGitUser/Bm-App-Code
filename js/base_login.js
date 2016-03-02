@@ -30,7 +30,7 @@ function login() {
 	$.ajax({
 		type: 'GET',
 		// http://123.56.185.114:8002/api/account?app=BEA&time=1456669504149&sign=c16f3826ee62405e4d24f19b8fa07911&m=18600000000&p=123456&_=1456669504153&callback=jsonp1
-		url: getRemoteSite() + '/api/account',
+		url: getRemoteSite() + '/api/base_account_auth',
 		// data to be added to query string:
 		data: dataset,
 		contentType: "application/json",
@@ -39,7 +39,7 @@ function login() {
 		//18600961576async: false,
 		//jsonpCallback: 'jsonpCallback',
 		//data: JSON.stringify(postData),
-		timeout: 3000,
+		timeout: 10000,
 		//context: $('body'),
 		success: function(data, status, xhr) {
 			// Supposing this JSON payload was received:
@@ -49,11 +49,16 @@ function login() {
 				$.alert(data.Errors.join(","));
 			} else {
 				setAuth(data.Model.No);
+				setMoblieNo(document.getElementById("mobileno").value);
 				$.router.load("base_main.html");
 			}
 		},
 		error: function(xhr, type, error) {
-			$.alert('Ajax error!' + type + "," + error);
+			if("timeout" === type) {
+				$.alert("网络请求超时，请检查设备信号后重试。");
+			} else{
+				$.alert('网络请求错误，' + type + "," + error);
+			}
 		},
 		complete: function(xhr, status) {
 			//alert("complete");
