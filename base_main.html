@@ -44,169 +44,67 @@
 						<span class="tab-label">我的</span>
 					</a>
 				</nav>
-				
-				
-<!-- content应该拥有"pull-to-refresh-content"类,表示启用下拉刷新 -->
-<div class="content pull-to-refresh-content" data-ptr-distance="55">
-    <!-- 默认的下拉刷新层 -->
-    <div class="pull-to-refresh-layer">
-        <div class="preloader"></div>
-        <div class="pull-to-refresh-arrow"></div>
-    </div>
-    <!-- 下面是正文 -->
-    <div class="card-container">
-        
 
-
-					<div class="buttons-tab">
-						<a href="base_main.html" class="active button external">提醒</a>
-						<a href="main_task.html" class="button external">申请</a>
-						<!--<a href="#tab3" class="tab-link button">通知</a>
-						<a href="#tab4" class="tab-link button">活动</a>-->
+				<!-- content应该拥有"pull-to-refresh-content"类,表示启用下拉刷新 -->
+				<div class="content pull-to-refresh-content" data-ptr-distance="55">
+					<!-- 默认的下拉刷新层 -->
+					<div class="pull-to-refresh-layer">
+						<div class="preloader"></div>
+						<div class="pull-to-refresh-arrow"></div>
 					</div>
-					<div class="tabs">
-						<div id="tab1" class="tab active">
-							<div class="content-block">
+					<!-- 下面是正文 -->
+					<div class="card-container">
+
+						<div class="buttons-tab">
+							<a href="base_main.html" class="active button external">提醒</a>
+							<a href="main_task.html" class="button external">申请</a>
+							<!--<a href="#tab3" class="tab-link button">通知</a>
+						<a href="#tab4" class="tab-link button">活动</a>-->
+						</div>
+						<div class="tabs">
+							<div id="tab1" class="tab active">
 								<div class="content-block">
-									<div class="text-center" style="font-size: 1.2rem; margin: 1rem 0 0 0;">本周累计推客量（组）</div>
-									<div class="text-center" style="font-size: 1.5rem; margin: 0.5rem 0 1rem 0;">123</div>
-									<div class="row no-gutter">
-										<div class="col-50 text-center">活跃客户（组）
-											<br/>15</div>
-										<div class="col-50 text-center">成交金额（元）
-											<br/>5432113</div>
+									<div class="content-block">
+										<div class="text-center" style="font-size: 1.2rem; margin: 1rem 0 0 0;">本周累计推客量（组）</div>
+										<div class="text-center" style="font-size: 1.5rem; margin: 0.5rem 0 1rem 0;" id="activity-tuike-count">123</div>
+										<div class="row no-gutter">
+											<div class="col-50 text-center">活跃客户（组）
+												<br/><span id="active-user-count">15</span></div>
+											<div class="col-50 text-center">成交金额（元）
+												<br/><span id="total-sales-amount"></span>5432113</div>
+										</div>
 									</div>
 								</div>
-
-							</div>
-
-							<div class="list-block">
-								<ul>
-									<li class="item-content">
-										<div class="item-media"><i class="icon icon-app"></i></div>
-										<div class="item-inner">
-											<div class="item-title">任务提示</div>
-											<div class="item-after">25</div>
-										</div>
-									</li>
-									<!--<li class="item-content">
-										<div class="item-media"><i class="icon icon-clock"></i></div>
-										<div class="item-inner">
-											<div class="item-title">预约到期</div>
-											<div class="item-after">5</div>
-										</div>
-									</li>
-									<li class="item-content">
-										<div class="item-media"><i class="icon icon-edit"></i></div>
-										<div class="item-inner">
-											<div class="item-title">申请到期</div>
-											<div class="item-after">5</div>
-										</div>
-									</li>-->
-								</ul>
+								<div class="list-block">
+									<ul>
+										<li class="item-content">
+											<div class="item-media"><i class="icon icon-app"></i></div>
+											<div class="item-inner">
+												<div class="item-title">任务提示</div>
+												<div class="item-after" id="user-task-count">25</div>
+											</div>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</div>
-						<!--<div id="tab3" class="tab">
-
-							<div class="list-block media-list">
-								<ul>
-									<li>
-										<a href="#" class="item-link item-content">
-											<div class="item-media"><img src="img/approval_pass.png" style='width: 4rem;'></div>
-											<div class="item-inner">
-												<div class="item-title-row">
-													<div class="item-title">审核通过通知</div>
-													<div class="item-after">1天前</div>
-												</div>
-												<div class="item-subtitle">您发起的豪景丽苑一期认购申请已通过审核，请您及时处理</div>
-												<div class="item-text"></div>
-											</div>
-										</a>
-									</li>
-									<li>
-										<a href="#" class="item-link item-content">
-											<div class="item-media"><img src="img/sys_notice.png" style='width: 4rem;'></div>
-											<div class="item-inner">
-												<div class="item-title-row">
-													<div class="item-title">系统更新通知</div>
-													<div class="item-after">2天前</div>
-												</div>
-												<div class="item-subtitle">我公司将于2016年1月31晚8:00-10:00对软件进行系统更新</div>
-												<div class="item-text"></div>
-											</div>
-										</a>
-									</li>
-									<li>
-										<a href="#" class="item-link item-content">
-											<div class="item-media"><img src="img/biz_notice.png" style='width: 4rem;'></div>
-											<div class="item-inner">
-												<div class="item-title-row">
-													<div class="item-title">员工通知</div>
-													<div class="item-after">25天</div>
-												</div>
-												<div class="item-subtitle">经公司董事会决定，将于2015年12月30日召开公司年会</div>
-												<div class="item-text"></div>
-											</div>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div id="tab4" class="tab">
-							
-							<div class="list-block media-list">
-								<ul>
-									<li>
-										<a href="#" class="item-link item-content">
-											<div class="item-media"><img src="img/approval_pass.png" style='width: 4rem;'></div>
-											<div class="item-inner">
-												<div class="item-title-row">
-													<div class="item-title">蓝景丽家迎双节优惠促销活动</div>
-													<div class="item-after">1天前</div>
-												</div>
-												<div class="item-subtitle">活动时间：2015.12.23-2016.1.5</div>
-												<div class="item-text"></div>
-											</div>
-										</a>
-									</li>
-									<li>
-										<a href="#" class="item-link item-content">
-											<div class="item-media"><img src="img/sys_notice.png" style='width: 4rem;'></div>
-											<div class="item-inner">
-												<div class="item-title-row">
-													<div class="item-title">迎双节双倍积分活动</div>
-													<div class="item-after">2天前</div>
-												</div>
-												<div class="item-subtitle">活动时间：2015.12.23-2016.1.5</div>
-												<div class="item-text"></div>
-											</div>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>-->
 					</div>
 				</div>
-    </div>
-</div>
+			</div>
 
-				<!-- 这里是页面内容区 -->
-				<div class="content">
-					<!--<div class="content-block" id="id">-->
-
+			<!-- 这里是页面内容区 -->
+			<div class="content">
+				<!--<div class="content-block" id="id">-->
 
 			</div>
 
 			<script type='text/javascript' src='lib/zepto/zepto.min.js' charset='utf-8'></script>
 			<script type='text/javascript' src='js/sm.min.js' charset='utf-8'></script>
 			<script type='text/javascript' src='js/sm-extend.min.js' charset='utf-8'></script>
+
+			<script type="text/javascript" src="lib/md5.min.js" charset="utf-8"></script>
 			<script type="text/javascript" src="js/app.js"></script>
 			<script type="text/javascript" src="js/base_main.js"></script>
-			<!-- 默认必须要执行$.init(),实际业务里一般不会在HTML文档里执行，通常是在业务页面代码的最后执行 -->
-			<script>
-				$.init();
-			</script>
 	</body>
 
 </html>
