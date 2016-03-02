@@ -29,7 +29,6 @@ function login() {
 
 	$.ajax({
 		type: 'GET',
-		// http://123.56.185.114:8002/api/account?app=BEA&time=1456669504149&sign=c16f3826ee62405e4d24f19b8fa07911&m=18600000000&p=123456&_=1456669504153&callback=jsonp1
 		url: getRemoteSite() + '/api/base_account_auth',
 		// data to be added to query string:
 		data: dataset,

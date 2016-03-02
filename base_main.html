@@ -53,7 +53,7 @@
 						<div class="pull-to-refresh-arrow"></div>
 					</div>
 					<!-- 下面是正文 -->
-					<div class="card-container">
+					<div>
 
 						<div class="buttons-tab">
 							<a href="base_main.html" class="active button external">提醒</a>
@@ -88,6 +88,8 @@
 								</div>
 							</div>
 						</div>
+					
+				<div id="cpl-c">Hello</div>
 					</div>
 				</div>
 			</div>
@@ -95,7 +97,6 @@
 			<!-- 这里是页面内容区 -->
 			<div class="content">
 				<!--<div class="content-block" id="id">-->
-
 			</div>
 
 			<script type='text/javascript' src='lib/zepto/zepto.min.js' charset='utf-8'></script>
@@ -105,6 +106,10 @@
 			<script type="text/javascript" src="lib/md5.min.js" charset="utf-8"></script>
 			<script type="text/javascript" src="js/app.js"></script>
 			<script type="text/javascript" src="js/base_main.js"></script>
+			<script src="lib/template.js" type="text/javascript" charset="utf-8"></script>
+			<script id="cpl" type="text/html">
+				<h1>本周活跃用户有 {{ActiveCustomer}} 人。	</h1>		
+			</script>
 	</body>
 
 </html>
