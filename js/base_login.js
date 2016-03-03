@@ -30,26 +30,17 @@ function login() {
 	$.ajax({
 		type: 'GET',
 		url: getRemoteSite() + '/api/base_account_auth',
-		// data to be added to query string:
 		data: dataset,
 		contentType: "application/json",
-		// type of data we are expecting in return:
 		dataType: 'jsonp',
-		//18600961576async: false,
-		//jsonpCallback: 'jsonpCallback',
-		//data: JSON.stringify(postData),
 		timeout: 10000,
-		//context: $('body'),
 		success: function(data, status, xhr) {
-			// Supposing this JSON payload was received:
-			//   {"project": {"id": 42, "html": "<div>..." }}
-			// append the HTML to context object.
 			if (data.HasError) {
 				$.alert(data.Errors.join(","));
 			} else {
 				setAuth(data.Model.No);
 				setMoblieNo(document.getElementById("mobileno").value);
-				$.router.load("base_main.html");
+				$.router.load(data.Model.Types[0] + "/base_main.html");
 			}
 		},
 		error: function(xhr, type, error) {

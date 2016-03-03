@@ -5,19 +5,16 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		<title>经纪大师启动页</title>
-		<!--<script type="text/javascript">
-			document.addEventListener('plusready', function() {
-				alert("welcome to Html5plus!");
-			});
-		</script>-->
 		<body>
-			<a id="login" href="base_login.html"></a>
-			<a id="main" href="base_main.html"></a>
-			<script type="text/javascript" src="js/app.js">
-			</script>
+			<a id="trans" href=""></a>
 			<script>
-				var selector = isLogin() ? "main" : "login";
-				document.getElementById(selector).click();
+				var accountNo = localStorage.getItem("accountNo");
+				var at = localStorage.getItem("accountType");
+				var page = at == null ? "base_login.html" :  "_" + at +"/base_main.html";
+
+				var href = document.getElementById("trans");
+				href.setAttribute("href", page);
+				href.click();
 			</script>
 		</body>
 
