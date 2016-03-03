@@ -12,13 +12,14 @@ function refreshData() {
 
 	var data = getSignData();
 	data.m = getMoblieNo();
+	data.u = getAuth();
 
 	console.log(data);
 
 	$.ajax({
 		type: 'GET',
 		// http://123.56.185.114:8002/api/account?app=BEA&time=1456669504149&sign=c16f3826ee62405e4d24f19b8fa07911&m=18600000000&p=123456&_=1456669504153&callback=jsonp1
-		url: getRemoteSite() + '/api/task_main_count',
+		url: getRemoteSite() + '/api/get_house_all',
 		// data to be added to query string:
 		data: data,
 		contentType: "application/json",
@@ -36,14 +37,7 @@ function refreshData() {
 			if (data.HasError) {
 				$.alert(data.Errors.join(","));
 			} else {
-				document.getElementById("activity-tuike-count").innerText = data.Model.TuikeAmount;
-				document.getElementById("active-user-count").innerText = data.Model.ActiveCustomer;
-				document.getElementById("total-sales-amount").innerText = data.Model.TotalSales;
-				document.getElementById("user-task-count").innerText = data.Model.AlertCount;
-				$.pullToRefreshDone('.pull-to-refresh-content');
-				
-				var html = template('cpl', data.Model);
-				document.getElementById('cpl-c').innerHTML = html;
+				var html = template('houses', data);
 			}
 		},
 		error: function(xhr, type, error) {

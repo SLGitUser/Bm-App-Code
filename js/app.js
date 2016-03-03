@@ -11,6 +11,10 @@ function getMoblieNo(){
 	return getlocal("mobileNo");
 }
 
+function getAuth(){
+	return getlocal("accountNo");
+}
+
 function setAuth(no){
 	setlocal("accountNo", no);
 }
@@ -35,7 +39,7 @@ function removelocal(key){
 }
 
 function getRemoteSite() {
-	return "http://123.56.185.114:8002";
+	return "http://localhost:62338";
 	//return "http://192.168.0.150:62338"
 }
 

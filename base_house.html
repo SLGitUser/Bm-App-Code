@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>登录</title>
+		<title>全部房源</title>
 		<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 		<link rel="shortcut icon" href="/favicon.ico">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -74,62 +74,24 @@
     </div>
       	<div class="list-block media-list">
     <ul>
-      <li>
-        <a href="house_detail.html?no=xxxx" class="item-link item-content">
-          <div class="item-media"><img src="img/house_demo.jpg" style='width: 4rem;'></div>
-          <div class="item-inner">
-            <div class="item-title-row">
-              <div class="item-title">黄金海岸 [紧邻地铁 精装现房]</div>
-              <div class="item-after">实时</div>
-            </div>
-            <div class="item-subtitle">均价： 1800元/㎡ 在售350套房源</div>
-            <div class="item-text">通州区 普通住宅</div>
-            <div class="item-text">佣金：3% 有53位经纪人收藏</div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="item-link item-content">
-          <div class="item-media"><img src="img/house_demo.jpg" style='width: 4rem;'></div>
-          <div class="item-inner">
-            <div class="item-title-row">
-              <div class="item-title">黄金海岸 [紧邻地铁 精装现房]</div>
-              <div class="item-after">实时</div>
-            </div>
-            <div class="item-subtitle">均价： 1800元/㎡ 在售350套房源</div>
-            <div class="item-text">通州区 普通住宅</div>
-            <div class="item-text">佣金：3% 有53位经纪人收藏</div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="item-link item-content">
-          <div class="item-media"><img src="img/house_demo.jpg" style='width: 4rem;'></div>
-          <div class="item-inner">
-            <div class="item-title-row">
-              <div class="item-title">黄金海岸 [紧邻地铁 精装现房]</div>
-              <div class="item-after">实时</div>
-            </div>
-            <div class="item-subtitle">均价： 1800元/㎡ 在售350套房源</div>
-            <div class="item-text">通州区 普通住宅</div>
-            <div class="item-text">佣金：3% 有53位经纪人收藏</div>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="item-link item-content">
-          <div class="item-media"><img src="img/house_demo.jpg" style='width: 4rem;'></div>
-          <div class="item-inner">
-            <div class="item-title-row">
-              <div class="item-title">黄金海岸 [紧邻地铁 精装现房]</div>
-              <div class="item-after">实时</div>
-            </div>
-            <div class="item-subtitle">均价： 1800元/㎡ 在售350套房源</div>
-            <div class="item-text">通州区 普通住宅</div>
-            <div class="item-text">佣金：3% 有53位经纪人收藏</div>
-          </div>
-        </a>
-      </li>
+    	<script id="houses" type="text/html">
+	    {{each Model}}
+	      <li>
+	        <a href="house_detail.html?no=xxxx" class="item-link item-content">
+	          <div class="item-media"><img src="img/house_demo.jpg" style='width: 4rem;'></div>
+	          <div class="item-inner">
+	            <div class="item-title-row">
+	              <div class="item-title">{{$value.Name}} [紧邻地铁 精装现房]</div>
+	              <div class="item-after">实时</div>
+	            </div>
+	            <div class="item-subtitle">均价： {{$value.AvgPrice}}元/㎡ 在售{{$value.SaleStatus}}套房源</div>
+	            <div class="item-text">{{$value.Address}} {{$value.BldType}}</div>
+	            <div class="item-text">佣金：{{$value.BrokerageRule}} 有53位经纪人收藏</div>
+	          </div>
+	        </a>
+	      </li>
+	    {{/each}}	
+		</script>
     </ul>
   </div>
         <div class="content-block">
@@ -152,7 +114,10 @@
 		<script type='text/javascript' src='lib/zepto/zepto.min.js' charset='utf-8'></script>
 		<script type='text/javascript' src='js/sm.min.js' charset='utf-8'></script>
 		<script type='text/javascript' src='js/sm-extend.min.js' charset='utf-8'></script>
+		<script type="text/javascript" src="lib/md5.min.js" charset="utf-8"></script>
 		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="js/base_house.js"></script>
+		<script src="lib/template.js" type="text/javascript" charset="utf-8"></script>
 		<!-- 默认必须要执行$.init(),实际业务里一般不会在HTML文档里执行，通常是在业务页面代码的最后执行 -->
 		<script>
 			$.init();
