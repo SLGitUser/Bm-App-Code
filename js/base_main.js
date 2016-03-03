@@ -42,8 +42,8 @@ function refreshData() {
 				document.getElementById("user-task-count").innerText = data.Model.AlertCount;
 				$.pullToRefreshDone('.pull-to-refresh-content');
 				
-				var html = template('cpl', data.Model);
-				document.getElementById('cpl-c').innerHTML = html;
+//				var html = template('cpl', data.Model);
+//				document.getElementById('cpl-c').innerHTML = html;
 			}
 		},
 		error: function(xhr, type, error) {
