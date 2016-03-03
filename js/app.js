@@ -35,8 +35,8 @@ function removelocal(key){
 }
 
 function getRemoteSite() {
-	return "http://123.56.185.114:8002";
-	//return "http://192.168.0.150:62338"
+	//return "http://123.56.185.114:8002";
+	return "http://localhost:62338"
 }
 
 function getSignData(){
