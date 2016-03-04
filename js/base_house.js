@@ -18,26 +18,17 @@ function refreshData() {
 
 	$.ajax({
 		type: 'GET',
-		// http://123.56.185.114:8002/api/account?app=BEA&time=1456669504149&sign=c16f3826ee62405e4d24f19b8fa07911&m=18600000000&p=123456&_=1456669504153&callback=jsonp1
 		url: getRemoteSite() + '/api/get_house_all',
-		// data to be added to query string:
 		data: data,
 		contentType: "application/json",
-		// type of data we are expecting in return:
 		dataType: 'jsonp',
-		//18600961576async: false,
-		//jsonpCallback: 'jsonpCallback',
-		//data: JSON.stringify(postData),
 		timeout: 10000,
-		//context: $('body'),
 		success: function(data, status, xhr) {
-			// Supposing this JSON payload was received:
-			//   {"project": {"id": 42, "html": "<div>..." }}
-			// append the HTML to context object.
 			if (data.HasError) {
 				$.alert(data.Errors.join(","));
 			} else {
 				var html = template('houses', data);
+				document.getElementById("house-list").innerHTML = html;
 			}
 		},
 		error: function(xhr, type, error) {
