@@ -28,7 +28,7 @@ function refreshData() {
 				$.alert(data.Errors.join(","));
 			} else {
 				var html = template('houses', data);
-				document.getElementById("house-list").innerHTML = html;
+				document.getElementById("house-list-all").innerHTML = html;
 			}
 		},
 		error: function(xhr, type, error) {
