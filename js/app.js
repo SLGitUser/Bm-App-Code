@@ -11,6 +11,8 @@ function getMoblieNo() {
 	return getlocal("mobileNo");
 }
 
+function getAccountNo() {  return getlocal("accountNo"); }
+
 function getAuth() {
 	return getlocal("accountNo");
 }
