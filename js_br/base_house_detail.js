@@ -1,16 +1,16 @@
 $.init();
 
 // 添加'refresh'监听器
-$(document).on('refresh', '.pull-to-refresh-content', function(e) {
-
-	refreshData();
-});
+//$(document).on('refresh', '.pull-to-refresh-content', function(e) {
+//
+//	refreshData();
+//});
 
 
 function refreshData() {
 
 	var qs = getQueryStrings();
-
+$.alert(qs["no"]);
 	var data = getSignData();
 	data.houseId = qs["no"];
 	data.u = getAccountNo();
