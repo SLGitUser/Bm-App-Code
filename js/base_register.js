@@ -4,13 +4,15 @@ var t = 0;
 var h;
 $("#get-code-btn").click(function() {
 	if (t > 0) return false;
+	$("#get-code-btn").attr("disabled", "disabled");
 	t = 20;
 	h = setInterval(function() {
 		t--;
-		$("#get-code-btn").text("等待" + t + "秒后可重发");
+		$("#get-code-btn").text("等待" + t + "秒");
 		if (t == 0) {
 			clearInterval(h);
-			$("#get-code-btn").text("单击获取验证码");
+			$("#get-code-btn").text("获取验证码");
+			$("#get-code-btn").removeAttr("disabled");
 		}
 	}, 1000);
 	//login();
@@ -82,7 +84,6 @@ function register() {
 	var c = document.getElementById("code").value;
 	var u = document.getElementById("verify-uuid").value;
 	var p = document.getElementById("password").value;
-	var pc = document.getElementById("password_confirm").value;
 
 	if (!m) {
 		$.alert("请输入手机号码");
@@ -108,16 +109,12 @@ function register() {
 		$.alert("请输入密码");
 		return false;
 	}
-	if (p.length < 4) {
+	if (p.length < 6) {
 		$.alert("密码长度太少，请继续输入");
 		return false;
 	}
-	if (!pc) {
-		$.alert("请重复输入密码");
-		return false;
-	}
-	if (p !== pc) {
-		$.alert("重复输入密码不正确，请检查后输入");
+	if (p.length > 16) {
+		$.alert("密码长度太长，请减少");
 		return false;
 	}
 
@@ -151,7 +148,7 @@ function register() {
 				$.alert(data.Errors.join(","));
 			} else {
 				setAuth(data.Model.No);				
-				$.router.load("base_main.html");
+				$.router.load("_br/base_main.html");
 			}
 		},
 		error: function(xhr, type, error) {
@@ -164,5 +161,5 @@ function register() {
 		complete: function(xhr, status) {
 			//alert("complete");
 		}
-	}).send();
+	});
 }
