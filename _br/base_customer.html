@@ -9,10 +9,28 @@
 		<link rel="shortcut icon" href="/favicon.ico">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-
 		<link rel="stylesheet" href="../css/sm.min.css">
 		<link rel="stylesheet" href="../css/sm-extend.min.css">
-
+        <script id="cpl" type="text/html">
+					<div class="list-block media-list">
+						<ul>
+							<li>
+								<a class=" item-content">
+									<div class="item-media"><img src="../img/我的@3x.png" style='width: 4rem;'></div>
+									<div class="item-inner">
+										<div class="item-title-row">
+											<div class="item-title">姓名{{name}}</div>
+											<div class="item-after">手机号</div>
+										</div>
+										<div class="item-subtitle">活跃度：。。。。。。</div>
+										<div class="item-text">意向楼盘</div>
+										<div class="item-text">备注：</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</script>
 	</head>
 
 	<body>
@@ -25,7 +43,6 @@
 					<a class="icon icon-search pull-right"></a>
 					<h1 class="title">客户</h1>
 				</header>
-
 				<!-- 工具栏 -->
 				<nav class="bar bar-tab">
 					<a class="tab-item external" href="base_main.html">
@@ -45,54 +62,30 @@
 						<span class="tab-label">我的</span>
 					</a>
 				</nav>
-
 				<!-- 这里是页面内容区 -->
 				<div class="content">
-
 					<div class="row text-center">
 						<div class="col-33 icon icon-down"> 活跃度</div>
 						<div class="col-33 icon icon-down"> 客户等级</div>
 						<div class="col-33 icon icon-down"> 是否预约</div>
 					</div>
-
-<div class="list-block contacts-block">
-    <div class="list-group">
-      <ul>
-        <li class="list-group-title">A</li>
-        <li>
-          <div class="item-content">
-            <div class="item-inner">
-              <div class="item-title">客户1</div>
-            </div>
-          </div>
-        </li> 
-      </ul>
-    </div>
-    <div class="list-group">
-      <ul>
-        <li class="list-group-title">V</li>
-        <li>
-          <div class="item-content">
-            <div class="item-inner">
-              <div class="item-title">客户1</div>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div> 
+					<div class="list-block contacts-block">
+					<div id="cpl-c">
+						 
+					</div>
+					</div>
 				</div>
-			</div>
-
-		</div>
-
-		<script type='text/javascript' src='../lib/zepto/zepto.min.js' charset='utf-8'></script>
-		<script type='text/javascript' src='../js/sm.min.js' charset='utf-8'></script>
-		<script type='text/javascript' src='../js/sm-extend.min.js' charset='utf-8'></script>
-		<script type="text/javascript" src="../js/app.js"></script>
-		<!-- 默认必须要执行$.init(),实际业务里一般不会在HTML文档里执行，通常是在业务页面代码的最后执行 -->
-		<script>
-			$.init();
-		</script>
+				<script type='text/javascript' src='../lib/zepto/zepto.min.js' charset='utf-8'></script>
+				<script type='text/javascript' src='../js/sm.min.js' charset='utf-8'></script>
+				<script type='text/javascript' src='../js/sm-extend.min.js' charset='utf-8'></script>
+				
+				<script type="text/javascript" src="../lib/md5.min.js" ></script>
+				<script type="text/javascript" src="../lib/template.js" ></script>
+				<script type="text/javascript" src="../js/app.js"></script>
+				<script type="text/javascript" src="../js_br/base_customer.js"></script>
+				
+				<!-- 默认必须要执行$.init(),实际业务里一般不会在HTML文档里执行，通常是在业务页面代码的最后执行 -->
+				
 	</body>
 
 </html>
