@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>登录</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+		<link rel="shortcut icon" href="/favicon.ico">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../css/sm.min.css">
+		<link rel="stylesheet" href="../css/sm-extend.min.css">
+
+	</head>
+
+	<body>
+		<div class="page-group">
+			<!-- 单个page ,第一个.page默认被展示-->
+			<div class="page">
+				<!-- 标题栏 -->
+				<header class="bar bar-nav">
+					<h1 class="title">工作</h1>
+				</header>
+
+				<!-- 工具栏 -->
+				<nav class="bar bar-tab">
+					<a class="tab-item external active" href="base_main.html">
+						<span class="icon icon-computer"></span>
+						<span class="tab-label">工作</span>
+						<!--<span class="badge">2</span>-->
+					</a>
+					<a class="tab-item external" href="base_house_my.html">
+						<span class="icon icon-home"></span>
+						<span class="tab-label">房源</span>
+					</a>
+					<a class="tab-item external" href="base_customer.html">
+						<span class="icon icon-card"></span>
+						<span class="tab-label">客户</span>
+					</a>
+					<a class="tab-item external" href="base_mine.html">
+						<span class="icon icon-me"></span>
+						<span class="tab-label">我的</span>
+					</a>
+				</nav>
+
+				<!-- content应该拥有"pull-to-refresh-content"类,表示启用下拉刷新 -->
+				<div class="content pull-to-refresh-content" data-ptr-distance="55">
+					<!-- 默认的下拉刷新层 -->
+					<div class="pull-to-refresh-layer">
+						<div class="preloader"></div>
+						<div class="pull-to-refresh-arrow"></div>
+					</div>
+					<!-- 下面是正文 -->
+					<div> 
+						<div class="buttons-tab">
+							<a href="base_main.html" class="active button external">提醒</a>
+							<a href="main_task.html" class="button external">申请</a>
+							<!--<a href="#tab3" class="tab-link button">通知</a>
+						<a href="#tab4" class="tab-link button">活动</a>-->
+						</div>
+						<div class="tabs">
+							<div id="tab1" class="tab active">
+								<div class="content-block">
+									<div class="content-block">
+										<div class="text-center" style="font-size: 1.2rem; margin: 1rem 0 0 0;">本周累计推客量（组）</div>
+										<div class="text-center" style="font-size: 1.5rem; margin: 0.5rem 0 1rem 0;" id="activity-tuike-count">123</div>
+										<div class="row no-gutter">
+											<div class="col-50 text-center">活跃客户（组）
+												<br/><span id="active-user-count">15</span></div>
+											<div class="col-50 text-center">成交金额（元）
+												<br/><span id="total-sales-amount"></span>5432113</div>
+										</div>
+									</div>
+								</div>
+								<div class="list-block">
+									<ul>
+										<li class="item-content">
+											<div class="item-media"><i class="icon icon-app"></i></div>
+											<div class="item-inner">
+												<div class="item-title">任务提示</div>
+												<div class="item-after" id="user-task-count">25</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					
+				<div id="cpl-c">Hello</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 这里是页面内容区 -->
+			<div class="content">
+				<!--<div class="content-block" id="id">-->
+			</div>
+
+			<script type='text/javascript' src='../lib/zepto/zepto.min.js' charset='utf-8'></script>
+			<script type='text/javascript' src='../js/sm.min.js' charset='utf-8'></script>
+			<script type='text/javascript' src='../js/sm-extend.min.js' charset='utf-8'></script>
+
+			<script type="text/javascript" src="../lib/md5.min.js" charset="utf-8"></script>
+			<script type="text/javascript" src="../js/app.js"></script>
+			<script type="text/javascript" src="../js/base_main.js"></script>
+			<script type="text/javascript" src="../lib/template.js" charset="utf-8"></script>
+			<script id="cpl" type="text/html">
+				<h1>本周活跃用户有 {{ActiveCustomer}} 人。	</h1>		
+			</script>
+	</body>
+
+</html>
