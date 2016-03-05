@@ -18,7 +18,7 @@ function refreshData() {
 
 	$.ajax({
 		type: 'GET',
-		url: getRemoteSite() + '/api/get_house_all',
+		url: getRemoteSite() + '/api/get_house_my',
 		data: data,
 		contentType: "application/json",
 		dataType: 'jsonp',
@@ -27,8 +27,9 @@ function refreshData() {
 			if (data.HasError) {
 				$.alert(data.Errors.join(","));
 			} else {
+				console.info(data);
 				var html = template('houses', data);
-				document.getElementById("house-list-all").innerHTML = html;
+				document.getElementById("house-list-my").innerHTML = html;
 			}
 		},
 		error: function(xhr, type, error) {
@@ -41,7 +42,7 @@ function refreshData() {
 		complete: function(xhr, status) {
 			//alert("complete");
 		}
-	}).send();
+	});
 }
 
 $(function() {

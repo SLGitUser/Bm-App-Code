@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>全部房源</title>
+		<title>我的房源</title>
 		<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 		<link rel="shortcut icon" href="/favicon.ico">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -21,11 +21,11 @@
 						<div class="item-inner">
 							<div class="item-title-row">
 								<div class="item-title">{{$value.Name}} [紧邻地铁 精装现房]</div>
-								<div class="item-after">实时</div>
+								<div class="item-after"></div>
 							</div>
 							<div class="item-subtitle">均价： {{$value.AvgPrice}}元/㎡ 在售{{$value.SaleStatus}}套房源</div>
 							<div class="item-text">{{$value.Address}} {{$value.BldType}}</div>
-							<div class="item-text">佣金：{{$value.BrokerageRule}} 有53位经纪人收藏</div>
+							<div class="item-text">佣金：{{$value.BrokerageRule}} 有{{$value.CollectNum}}位经纪人收藏</div>
 						</div>
 					</a>
 				</li>
@@ -84,8 +84,8 @@
 									<div class="col-15">面积</div>
 									<div class="col-15">总价</div>
 								</div>
-								<div class="list-block media-list" id="house-list-all">
-									第二个
+								<div class="list-block media-list" id="house-list-my">
+									第一个
 								</div>
 							</div>
 						</div>

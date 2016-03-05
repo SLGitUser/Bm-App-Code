@@ -21,11 +21,11 @@
 						<div class="item-inner">
 							<div class="item-title-row">
 								<div class="item-title">{{$value.Name}} [紧邻地铁 精装现房]</div>
-								<div class="item-after">实时</div>
+								<div class="item-after">{{$value.AuthType}}</div>
 							</div>
 							<div class="item-subtitle">均价： {{$value.AvgPrice}}元/㎡ 在售{{$value.SaleStatus}}套房源</div>
 							<div class="item-text">{{$value.Address}} {{$value.BldType}}</div>
-							<div class="item-text">佣金：{{$value.BrokerageRule}} 有53位经纪人收藏</div>
+							<div class="item-text">佣金：{{$value.BrokerageRule}} 有{{$value.CollectNum}}位经纪人收藏</div>
 						</div>
 					</a>
 				</li>

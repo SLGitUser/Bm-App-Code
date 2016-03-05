@@ -22,11 +22,12 @@ function refreshData() {
 		data: data,
 		contentType: "application/json",
 		dataType: 'jsonp',
-		timeout: 10000,
+		timeout: 20000,
 		success: function(data, status, xhr) {
 			if (data.HasError) {
 				$.alert(data.Errors.join(","));
 			} else {
+				console.info(data);
 				var html = template('houses', data);
 				document.getElementById("house-list-all").innerHTML = html;
 			}
@@ -41,7 +42,7 @@ function refreshData() {
 		complete: function(xhr, status) {
 			//alert("complete");
 		}
-	}).send();
+	});
 }
 
 $(function() {
