@@ -30,14 +30,14 @@ function refreshData(){
 			if (data.HasError) {
 				$.alert(data.Errors.join(","));
 			}else {
-				alert("....");
-//				document.getElementById("activity-tuike-count").innerText = data.Model.TuikeAmount;
-//				document.getElementById("active-user-count").innerText = data.Model.ActiveCustomer;
-//				document.getElementById("total-sales-amount").innerText = data.Model.TotalSales;
-//				document.getElementById("user-task-count").innerText = data.Model.AlertCount;
-//				$.pullToRefreshDone('.pull-to-refresh-content'); 
-//			    var html = template('cpl',Date.model);
-//              document.getElementById('cpl-c').innerHTML = html;
+			    var html = template('cpl',data.Model);
+			    console.log(html);
+               document.getElementById('cpl-c').innerHTML = html;
+               document.getElementById("activity-tuike-count").innerText = data.Model.TuikeAmount;
+			   document.getElementById("active-user-count").innerText = data.Model.ActiveCustomer;
+				document.getElementById("total-sales-amount").innerText = data.Model.TotalSales;
+			document.getElementById("user-task-count").innerText = data.Model.AlertCount;
+				$.pullToRefreshDone('.pull-to-refresh-content'); 
 	 		}
 		},
 		error: function(xhr, type, error) {
