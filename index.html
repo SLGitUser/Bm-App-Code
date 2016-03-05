@@ -7,7 +7,11 @@
 		<title>经纪大师启动页</title>
 		<body>
 			<a id="trans" href=""></a>
+			<img src="img/base_splash.jpg" width="100%" />
 			<script>
+			
+				setTimeout(function(){
+			
 				var accountNo = localStorage.getItem("accountNo");
 				var at = localStorage.getItem("accountType");
 				var page = at == null ? "base_login.html" :  "_" + at +"/base_main.html";
@@ -15,6 +19,8 @@
 				var href = document.getElementById("trans");
 				href.setAttribute("href", page);
 				href.click();
+					
+				}, 1500);
 			</script>
 		</body>
 
