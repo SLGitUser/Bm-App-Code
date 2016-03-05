@@ -9,16 +9,16 @@ $(document).on('refresh', '.pull-to-refresh-content', function(e) {
 
 function refreshData() {
 
+	var qs = getQueryStrings();
 
 	var data = getSignData();
-	data.m = getMoblieNo();
+	data.houseId = qs["no"];
 	data.u = getAccountNo();
 
-	console.log(data);
 
 	$.ajax({
 		type: 'GET',
-		url: getRemoteSite() + '/api/get_house_my',
+		url: getRemoteSite() + '/api/get_house_detail',
 		data: data,
 		contentType: "application/json",
 		dataType: 'jsonp',
@@ -28,8 +28,8 @@ function refreshData() {
 				$.alert(data.Errors.join(","));
 			} else {
 				console.info(data);
-				var html = template('houses', data);
-				document.getElementById("house-list-my").innerHTML = html;
+				var html = template('is_message', data);
+				document.getElementById("message").innerHTML = html;
 			}
 		},
 		error: function(xhr, type, error) {
