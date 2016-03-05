@@ -9,12 +9,12 @@ $(document).on('refresh', '.pull-to-refresh-content', function(e) {
 
 function refreshData() {
 
+	var qs = getQueryStrings();
 
 	var data = getSignData();
-	data.houseId = getlocal("houseId");
+	data.houseId = qs["no"];
 	data.u = getAccountNo();
 
-console.info("显示"+data.houseId);
 
 	$.ajax({
 		type: 'GET',

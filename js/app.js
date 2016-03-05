@@ -67,6 +67,12 @@ function getQueryStrings() {
 	return assoc;
 }
 
+
+function getQueryString(para) {
+	var  qs = getQueryStrings();
+	return qs[para];
+}
+
 function gotoPage(url) {
 	var href = document.getElementById("trans");
 	if (href == null) {
