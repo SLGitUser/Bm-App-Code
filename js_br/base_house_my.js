@@ -12,7 +12,7 @@ function refreshData() {
 
 	var data = getSignData();
 	data.m = getMoblieNo();
-	data.u = getAuth();
+	data.u = getAccountNo();
 
 	console.log(data);
 

@@ -12,7 +12,7 @@ function refreshData() {
 
 	var data = getSignData();
 	data.houseId = getlocal("houseId");
-	data.u = getAuth();
+	data.u = getAccountNo();
 
 console.info("显示"+data.houseId);
 

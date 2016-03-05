@@ -13,10 +13,6 @@ function getMoblieNo() {
 
 function getAccountNo() {  return getlocal("accountNo"); }
 
-function getAuth() {
-	return getlocal("accountNo");
-}
-
 function setAuth(no) {
 	setlocal("accountNo", no);
 }
