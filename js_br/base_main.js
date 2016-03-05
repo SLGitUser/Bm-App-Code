@@ -56,7 +56,7 @@ function refreshData() {
 		complete: function(xhr, status) {
 			//alert("complete");
 		}
-	}).send();
+	});
 }
 
 $(function() {

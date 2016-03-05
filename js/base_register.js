@@ -73,7 +73,7 @@ function getCode() {
 		complete: function(xhr, status) {
 			//alert("complete");
 		}
-	}).send();
+	});
 }
 
 function register() {

@@ -39,7 +39,7 @@ function removelocal(key){
 }
 
 function getRemoteSite() {
-	return "http://127.0.0.1:8082";
+	return "http://localhost:62338";
 	//return "http://192.168.0.150:62338"
 }
 
