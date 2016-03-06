@@ -10,9 +10,9 @@ $.init();
 function refreshData() {
 
 	var qs = getQueryStrings();
-$.alert(qs["no"]);
+
 	var data = getSignData();
-	data.houseId = qs["no"];
+	data.id = qs["no"];
 	data.u = getAccountNo();
 
 
@@ -27,9 +27,13 @@ $.alert(qs["no"]);
 			if (data.HasError) {
 				$.alert(data.Errors.join(","));
 			} else {
+				data.Model.AddrPic = getPicUrl()+data.Model.AddrPic;
+				
 				console.info(data);
+				console.info(data.AddrPic);
 				var html = template('is_message', data);
 				document.getElementById("message").innerHTML = html;
+				document.getElementById("abc").src = data.Model.AddrPic;
 			}
 		},
 		error: function(xhr, type, error) {
