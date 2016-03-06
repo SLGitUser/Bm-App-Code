@@ -41,6 +41,9 @@ function getRemoteSite() {
 	return "http://localhost:62338";
 	//return "http://192.168.0.150:62338"
 }
+function getPicUrl() {
+	return "http://jjds.oss-cn-beijing.aliyuncs.com/";
+}
 
 function getSignData() {
 	var data = {};
