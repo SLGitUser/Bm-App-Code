@@ -22,10 +22,10 @@
 		</style>
 		<script type="text/html" id="is_message">
 				<img id="abc" width="100%" />
-				<h1 class="text-center">{{Name}}</h1>
-				<div class="text-center">{{BldType}} 期房</div>
-				<div class="text-center">均价：{{AvgPrice}}元/㎡ </div>
-				<div class="text-center">有效期：2015.12.10 - 2016.12.10</div>
+				<h1 class="text-center">{{Model.Name}}</h1>
+				<div class="text-center">{{Model.BldType}} 期房</div>
+				<div class="text-center">均价：{{Model.AvgPrice}}元/㎡ </div>
+				<div class="text-center">有效期：{{Model.Promotions.BeginAt|dateFormat:'yyyy年 MM月 dd日'}} - {{Model.Promotions.EndAt|dateFormat:'yyyy年 MM月 dd日'}}</div>
 
 
 				<div class="content-block">

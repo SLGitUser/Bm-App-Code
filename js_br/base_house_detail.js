@@ -110,7 +110,7 @@ function refreshData() {
 				data.Model.NeedSee = data.Model.NeedSee.toString();
 				data.Model.NeedSeeThirty = data.Model.NeedSeeThirty.toString();
 				console.info(data);
-				var html = template('is_message', data.Model);
+				var html = template('is_message', data);
 				document.getElementById("message").innerHTML = html;
 				document.getElementById("title").innerHTML = data.Model.Name;
 				document.getElementById("abc").src = data.Model.AddrPic;
