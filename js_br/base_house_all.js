@@ -22,7 +22,7 @@ function refreshData() {
 		data: data,
 		contentType: "application/json",
 		dataType: 'jsonp',
-		timeout: 20000,
+		timeout: 10000,
 		success: function(data, status, xhr) {
 			if (data.HasError) {
 				$.alert(data.Errors.join(","));
