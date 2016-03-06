@@ -112,6 +112,7 @@ function refreshData() {
 				console.info(data);
 				var html = template('is_message', data.Model);
 				document.getElementById("message").innerHTML = html;
+				document.getElementById("title").innerHTML = data.Model.Name;
 				document.getElementById("abc").src = data.Model.AddrPic;
 			}
 		},
