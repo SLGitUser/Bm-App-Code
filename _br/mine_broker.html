@@ -16,12 +16,24 @@
 		<script id="mine" type="text/html">
 			<ul>
 				<li>
-					<div class="item-inner">
-						<div class="item-subtitle">公司名称:{{Name}} </div>
-						<div class="item-subtitle">地址:{{City}} </div>
-					</div>
+					<!--<div>公司名称(代码)：{{Name}} ({{FirmNo}})</div>-->
+					<div>地址：{{Address}} </div>
+					<div>注册时间：{{RegAt}} </div>
 				</li>
 			</ul>
+		</script>
+		<script id="firmall" type="text/html">
+		
+		<div class="item-content">
+            <div>公司名称(代码)：</div>
+            <div>
+              <select id="testSelect">
+                {{each Model}}
+                <option value="{{$value.FirmNo}}">{{$value.Name}}({{$value.FirmNo}})</option>
+                {{/each}}
+              </select>
+            </div>
+          </div>
 		</script>
 	</head>
 
@@ -35,9 +47,26 @@
 					<!--  <a class="icon icon-refresh pull-right"></a>-->
 					<h1 class="title">所属公司</h1>
 				</header>
+				<nav class="bar bar-tab">
+					<a class="tab-item external" href="javascript:void(0)" onclick="save()">
+						<span class="icon icon-check"> 绑定</span>
+					</a>
+					<!--<a class="tab-item external" href="#">
+						<span class="icon icon-remove"> 解绑</span>
+					</a>-->
+				</nav>
+				
+			<div class="content list-block media-list">
+				<div id="firm-list-all">
+              <input type="text" id="fram"/>
+				</div>
+				<div id="mine-list-all">
+				
+				</div>
 			</div>
-		</div>
-		<div class="list-block media-list" id="mine-list-all">
+			</div>
+			
+			
 			
 		</div>
 	</body>
