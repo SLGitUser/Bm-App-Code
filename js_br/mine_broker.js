@@ -18,7 +18,7 @@ function refreshData() {
 
 	$.ajax({
 		type: 'GET',
-		url: getRemoteSite() + '/api/get_house_all',
+		url: getRemoteSite() + '/api/get_mine_detail',
 		data: data,
 		contentType: "application/json",
 		dataType: 'jsonp',
@@ -28,8 +28,9 @@ function refreshData() {
 				$.alert(data.Errors.join(","));
 			} else {
 				console.info(data);
-				var html = template('houses', data);
-				document.getElementById("house-list-all").innerHTML = html;
+				$.alert("哈哈哈");
+				var html = template('mine', data.Model);
+				document.getElementById("mine-list-all").innerHTML = html;
 			}
 		},
 		error: function(xhr, type, error) {
