@@ -31,12 +31,12 @@ function refreshData(){
 				$.alert(data.Errors.join(","));
 			}else {
 			    var html = template('cpl',data.Model);
-			    console.log(html);
+			   console.log(html);
                document.getElementById('cpl-c').innerHTML = html;
                document.getElementById("activity-tuike-count").innerText = data.Model.TuikeAmount;
 			   document.getElementById("active-user-count").innerText = data.Model.ActiveCustomer;
-				document.getElementById("total-sales-amount").innerText = data.Model.TotalSales;
-			document.getElementById("user-task-count").innerText = data.Model.AlertCount;
+			   document.getElementById("total-sales-amount").innerText = data.Model.TotalSales;
+			   document.getElementById("user-task-count").innerText = data.Model.AlertCount;
 				$.pullToRefreshDone('.pull-to-refresh-content'); 
 	 		}
 		},
